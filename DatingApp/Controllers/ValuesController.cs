@@ -66,6 +66,11 @@ namespace DatingApp.Controllers
         {
         }
 
+        public void Hello()
+        {
+            
+        }
+
 #endregion
     }
 }
