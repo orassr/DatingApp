@@ -9,7 +9,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -56,7 +57,7 @@ namespace DatingApp.Controllers
         {
         }
 
-        [AllowAnonymous]
+        //[AllowAnonymous]
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
