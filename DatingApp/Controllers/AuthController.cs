@@ -15,15 +15,27 @@ namespace DatingApp.Controllers
     [Route("api/[controller]")]
     public class AuthController : Controller
     {
+#region Fields
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
 
+#endregion
+
+#region Ctor
         public AuthController(IAuthRepository repo, IConfiguration config)
         {
             this._config = config;
             this._repo = repo;
         }
+        
+#endregion
 
+#region API Methods
+        /// <summary>
+        /// API Register
+        /// </summary>
+        /// <param name="userForRegisterDto"></param>
+        /// <returns></returns>
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody]UserForRegisterDto userForRegisterDto)
         {
@@ -46,8 +58,12 @@ namespace DatingApp.Controllers
 
             return StatusCode(201);
         }
-
-
+        
+        /// <summary>
+        /// API Login
+        /// </summary>
+        /// <param name="userForLoginDto"></param>
+        /// <returns></returns>
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody]UserForLoginDto userForLoginDto)
         {
@@ -76,4 +92,5 @@ namespace DatingApp.Controllers
             return Ok(new { tokenString });
         }
     }
+#endregion
 }
