@@ -43,6 +43,8 @@ namespace DatingApp
             services.AddCors();
             // Adding AutoMapper 4.0.1:
             services.AddAutoMapper();
+            // Using the Cloud storage services:
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             // Injecting the seeding + use it in the Configure method. ()at the constructor.
             services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();

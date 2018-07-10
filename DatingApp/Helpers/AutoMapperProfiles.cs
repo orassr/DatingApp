@@ -26,7 +26,7 @@ namespace DatingApp.Helpers
                 });
 
             CreateMap<Photo, PhotosForDetailesDto>();
-            
+
             /// <summary>
             /// Updating User profile fron the SPA to the DB 
             /// </summary>
@@ -34,6 +34,10 @@ namespace DatingApp.Helpers
             /// <typeparam name="User"></typeparam>
             /// <returns></returns>
             CreateMap<UserForUpdateDto, User>();
+
+            CreateMap<PhotoForCreationDto, Photo>();
+
+            CreateMap<Photo, PhotoForReturnDto>();
         }
     }
 }
