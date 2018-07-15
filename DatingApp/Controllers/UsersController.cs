@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using AutoMapper;
 using DatingApp.Data;
 using DatingApp.Dtos;
+using DatingApp.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DatingApp.Controllers
 {
+    // Adding the LogUserActivity from the Startup.cs
+    [ServiceFilter(typeof(LogUserActivity))]
     // All methods are protected and required Authorization.
     [Authorize]
     // Make the controller be available by the MVC.
